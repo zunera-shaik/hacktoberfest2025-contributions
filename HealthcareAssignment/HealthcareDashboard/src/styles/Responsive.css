@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+  .dashboard-overview {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}

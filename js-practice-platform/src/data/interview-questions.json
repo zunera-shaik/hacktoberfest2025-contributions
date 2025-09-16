@@ -1,0 +1,36 @@
+[
+  {
+    "id": "js-interview-001",
+    "title": "Debouncing Function",
+    "category": "interview-questions",
+    "difficulty": "hard",
+    "question": "Implement a debounce function that delays the execution of a function until after a specified delay.",
+    "description": "Debouncing is a common technique used to limit the rate at which a function can fire. This is frequently asked in JavaScript interviews.",
+    "starterCode": "// Implement a debounce function\nfunction debounce(func, delay) {\n  // Your code here\n}\n\n// Test the debounce function\nconst debouncedLog = debounce(() => {\n  console.log('Function executed!');\n}, 1000);\n\n// These calls should only result in one execution after 1 second\ndebouncedLog();\ndebouncedLog();\ndebouncedLog();",
+    "solution": "// Implement a debounce function\nfunction debounce(func, delay) {\n  let timeoutId;\n  return function(...args) {\n    clearTimeout(timeoutId);\n    timeoutId = setTimeout(() => func.apply(this, args), delay);\n  };\n}\n\n// Test the debounce function\nconst debouncedLog = debounce(() => {\n  console.log('Function executed!');\n}, 1000);\n\n// These calls should only result in one execution after 1 second\ndebouncedLog();\ndebouncedLog();\ndebouncedLog();",
+    "testCases": [
+      {
+        "input": "Multiple rapid calls",
+        "expected": "Only one execution after delay",
+        "description": "Should execute function only once after the specified delay"
+      }
+    ]
+  },
+  {
+    "id": "js-interview-002",
+    "title": "Deep Clone Object",
+    "category": "interview-questions",
+    "difficulty": "hard",
+    "question": "Implement a function to deep clone a JavaScript object.",
+    "description": "Deep cloning is a common interview question that tests understanding of object references and recursion.",
+    "starterCode": "// Implement a deep clone function\nfunction deepClone(obj) {\n  // Your code here\n}\n\n// Test the deep clone function\nconst original = {\n  name: 'John',\n  age: 30,\n  address: {\n    street: '123 Main St',\n    city: 'New York'\n  },\n  hobbies: ['reading', 'coding']\n};\n\nconst cloned = deepClone(original);\ncloned.address.city = 'Boston';\ncloned.hobbies.push('swimming');\n\nconsole.log('Original:', original);\nconsole.log('Cloned:', cloned);",
+    "solution": "// Implement a deep clone function\nfunction deepClone(obj) {\n  if (obj === null || typeof obj !== 'object') {\n    return obj;\n  }\n  \n  if (obj instanceof Date) {\n    return new Date(obj.getTime());\n  }\n  \n  if (obj instanceof Array) {\n    return obj.map(item => deepClone(item));\n  }\n  \n  if (typeof obj === 'object') {\n    const clonedObj = {};\n    for (let key in obj) {\n      if (obj.hasOwnProperty(key)) {\n        clonedObj[key] = deepClone(obj[key]);\n      }\n    }\n    return clonedObj;\n  }\n}\n\n// Test the deep clone function\nconst original = {\n  name: 'John',\n  age: 30,\n  address: {\n    street: '123 Main St',\n    city: 'New York'\n  },\n  hobbies: ['reading', 'coding']\n};\n\nconst cloned = deepClone(original);\ncloned.address.city = 'Boston';\ncloned.hobbies.push('swimming');\n\nconsole.log('Original:', original);\nconsole.log('Cloned:', cloned);",
+    "testCases": [
+      {
+        "input": "Modify cloned object",
+        "expected": "Original object remains unchanged",
+        "description": "Changes to cloned object should not affect the original"
+      }
+    ]
+  }
+]

@@ -1,0 +1,83 @@
+*****Update feature and functionality as per your thinking...***
+
+📌 Project Brief
+
+FindNearestMess is a location-based food discovery app where users can:
+
+Find nearest mess/restaurant based on current location (using Geolocation API).
+
+Search messes/restaurants by name or category (veg, non-veg, tiffin, dining, etc.).
+
+View details: menu, pricing, timings, ratings, reviews, contact info.
+
+Filter/Sort messes (by distance, price, rating).
+
+Save Favorites (optional advanced feature).
+
+Future extensions:
+
+Online ordering and delivery.
+
+User reviews & ratings.
+
+Authentication (login/signup).
+
+find-nearest-mess/
+│── public/                  # Static assets (icons, images, etc.)
+│── src/
+│   ├── assets/              # App images, icons
+│   ├── components/          # Reusable UI components
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── MessCard.jsx
+│   │   ├── MapView.jsx
+│   │   └── FilterSort.jsx
+│   ├── pages/               # Page-level components
+│   │   ├── Home.jsx
+│   │   ├── MessList.jsx
+│   │   ├── MessDetails.jsx
+│   │   └── Favorites.jsx
+│   ├── context/             # Global state (React Context / Redux Toolkit later)
+│   │   └── LocationContext.jsx
+│   ├── data/                # Mock JSON data (for messes/restaurants)
+│   │   └── messes.json
+│   ├── hooks/               # Custom hooks
+│   │   └── useGeolocation.js
+│   ├── styles/              # CSS/SCSS files
+│   │   └── global.css
+│   ├── App.jsx              # Root component
+│   ├── main.jsx             # Entry point (Vite)
+│   └── routes.jsx           # React Router config
+│── package.json
+│── vite.config.js
+
+
+⚙️ Tech Stack
+
+Frontend: React + Vite (fast build & dev experience)
+
+Styling: Tailwind CSS or Bootstrap (for UI)
+
+State Management: React Context / Redux Toolkit (if app grows)
+
+Routing: React Router
+
+Maps & Location: Google Maps API / Leaflet.js + Geolocation API
+
+Data: Start with mock JSON (messes.json), later connect to backend
+
+🏗️ Feature Flow
+
+Home Page → Logo + search bar + "Find Nearest Mess" button.
+
+Location Access → Use browser Geolocation API to get user’s coordinates.
+
+Mess List Page → Show list of messes sorted by distance from user.
+
+Details Page → On click → show menu, price, contact, location on map.
+
+Favorites Page (optional) → User can save messes.
+
+
+

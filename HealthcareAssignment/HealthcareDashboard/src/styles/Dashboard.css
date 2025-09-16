@@ -1,0 +1,31 @@
+.dashboard-main {
+  padding: 20px;
+}
+
+.dashboard-overview {
+  display: flex;
+  gap: 20px;
+}
+
+.anatomy-section {
+  flex: 1;
+}
+
+.health-cards {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.health-card {
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-view .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}

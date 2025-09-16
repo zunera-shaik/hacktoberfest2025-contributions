@@ -1,0 +1,58 @@
+[
+  {
+    "id": "js-basic-001",
+    "title": "Variables and Data Types",
+    "category": "javascript-basics",
+    "difficulty": "easy",
+    "question": "Create variables of different data types and display their types using typeof operator.",
+    "description": "In this exercise, you'll learn about JavaScript's basic data types including string, number, boolean, undefined, and object.",
+    "starterCode": "// Create variables of different data types\nlet stringVar = '';\nlet numberVar = 0;\nlet booleanVar = false;\nlet undefinedVar;\nlet objectVar = {};\n\n// Your code here\nconsole.log('String:', typeof stringVar);\nconsole.log('Number:', typeof numberVar);\nconsole.log('Boolean:', typeof booleanVar);\nconsole.log('Undefined:', typeof undefinedVar);\nconsole.log('Object:', typeof objectVar);",
+    "solution": "// Create variables of different data types\nlet stringVar = 'Hello World';\nlet numberVar = 42;\nlet booleanVar = true;\nlet undefinedVar;\nlet objectVar = { name: 'JavaScript' };\n\n// Display their types\nconsole.log('String:', typeof stringVar);\nconsole.log('Number:', typeof numberVar);\nconsole.log('Boolean:', typeof booleanVar);\nconsole.log('Undefined:', typeof undefinedVar);\nconsole.log('Object:', typeof objectVar);",
+    "testCases": [
+      {
+        "input": "",
+        "expected": "String: string\nNumber: number\nBoolean: boolean\nUndefined: undefined\nObject: object",
+        "description": "Should correctly identify all data types"
+      }
+    ]
+  },
+  {
+    "id": "js-basic-002",
+    "title": "Functions and Parameters",
+    "category": "javascript-basics",
+    "difficulty": "easy",
+    "question": "Create a function that takes two parameters and returns their sum.",
+    "description": "Learn how to create functions, pass parameters, and return values in JavaScript.",
+    "starterCode": "// Create a function that adds two numbers\nfunction addNumbers(a, b) {\n  // Your code here\n}\n\n// Test the function\nconsole.log(addNumbers(5, 3)); // Should output 8\nconsole.log(addNumbers(10, 20)); // Should output 30",
+    "solution": "// Create a function that adds two numbers\nfunction addNumbers(a, b) {\n  return a + b;\n}\n\n// Test the function\nconsole.log(addNumbers(5, 3)); // Should output 8\nconsole.log(addNumbers(10, 20)); // Should output 30",
+    "testCases": [
+      {
+        "input": "addNumbers(5, 3)",
+        "expected": "8",
+        "description": "Should return 8 when adding 5 and 3"
+      },
+      {
+        "input": "addNumbers(10, 20)",
+        "expected": "30",
+        "description": "Should return 30 when adding 10 and 20"
+      }
+    ]
+  },
+  {
+    "id": "js-basic-003",
+    "title": "Arrays and Loops",
+    "category": "javascript-basics",
+    "difficulty": "easy",
+    "question": "Create an array of numbers and use a for loop to calculate their sum.",
+    "description": "Practice working with arrays and for loops in JavaScript.",
+    "starterCode": "// Create an array of numbers\nconst numbers = [1, 2, 3, 4, 5];\n\n// Calculate the sum using a for loop\nlet sum = 0;\n// Your code here\n\nconsole.log('Sum:', sum); // Should output: Sum: 15",
+    "solution": "// Create an array of numbers\nconst numbers = [1, 2, 3, 4, 5];\n\n// Calculate the sum using a for loop\nlet sum = 0;\nfor (let i = 0; i < numbers.length; i++) {\n  sum += numbers[i];\n}\n\nconsole.log('Sum:', sum); // Should output: Sum: 15",
+    "testCases": [
+      {
+        "input": "numbers = [1, 2, 3, 4, 5]",
+        "expected": "Sum: 15",
+        "description": "Should calculate sum as 15"
+      }
+    ]
+  }
+]

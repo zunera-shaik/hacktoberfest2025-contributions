@@ -1,0 +1,46 @@
+[
+  {
+    "id": "js-inter-001",
+    "title": "Closures and Scope",
+    "category": "intermediate-javascript",
+    "difficulty": "medium",
+    "question": "Create a function that uses closure to maintain a private counter.",
+    "description": "Understanding closures is crucial for advanced JavaScript programming. This exercise demonstrates how closures can be used to create private variables.",
+    "starterCode": "// Create a counter function using closure\nfunction createCounter() {\n  // Your code here\n}\n\n// Test the counter\nconst counter = createCounter();\nconsole.log(counter()); // Should output 1\nconsole.log(counter()); // Should output 2\nconsole.log(counter()); // Should output 3",
+    "solution": "// Create a counter function using closure\nfunction createCounter() {\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\n\n// Test the counter\nconst counter = createCounter();\nconsole.log(counter()); // Should output 1\nconsole.log(counter()); // Should output 2\nconsole.log(counter()); // Should output 3",
+    "testCases": [
+      {
+        "input": "counter()",
+        "expected": "1",
+        "description": "First call should return 1"
+      },
+      {
+        "input": "counter()",
+        "expected": "2",
+        "description": "Second call should return 2"
+      }
+    ]
+  },
+  {
+    "id": "js-inter-002",
+    "title": "Array Methods - Map, Filter, Reduce",
+    "category": "intermediate-javascript",
+    "difficulty": "medium",
+    "question": "Use array methods to transform and filter data.",
+    "description": "Master the most important array methods for functional programming in JavaScript.",
+    "starterCode": "const users = [\n  { name: 'John', age: 25, active: true },\n  { name: 'Jane', age: 30, active: false },\n  { name: 'Bob', age: 35, active: true },\n  { name: 'Alice', age: 28, active: true }\n];\n\n// Get names of active users\nconst activeUserNames = // Your code here\n\n// Get average age of all users\nconst averageAge = // Your code here\n\nconsole.log('Active users:', activeUserNames);\nconsole.log('Average age:', averageAge);",
+    "solution": "const users = [\n  { name: 'John', age: 25, active: true },\n  { name: 'Jane', age: 30, active: false },\n  { name: 'Bob', age: 35, active: true },\n  { name: 'Alice', age: 28, active: true }\n];\n\n// Get names of active users\nconst activeUserNames = users\n  .filter(user => user.active)\n  .map(user => user.name);\n\n// Get average age of all users\nconst averageAge = users\n  .reduce((sum, user) => sum + user.age, 0) / users.length;\n\nconsole.log('Active users:', activeUserNames);\nconsole.log('Average age:', averageAge);",
+    "testCases": [
+      {
+        "input": "activeUserNames",
+        "expected": "['John', 'Bob', 'Alice']",
+        "description": "Should return array of active user names"
+      },
+      {
+        "input": "averageAge",
+        "expected": "29.5",
+        "description": "Should return average age as 29.5"
+      }
+    ]
+  }
+]

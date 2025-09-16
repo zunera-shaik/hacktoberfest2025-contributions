@@ -1,0 +1,41 @@
+[
+  {
+    "id": "js-dom-001",
+    "title": "DOM Element Selection",
+    "category": "javascript-dom",
+    "difficulty": "easy",
+    "question": "Select DOM elements and change their content.",
+    "description": "Learn how to select DOM elements using various methods and modify their content.",
+    "starterCode": "// HTML structure:\n// <div id=\"title\">Original Title</div>\n// <p class=\"description\">Original description</p>\n// <button onclick=\"changeContent()\">Change Content</button>\n\nfunction changeContent() {\n  // Select the title element and change its text\n  // Your code here\n  \n  // Select the description element and change its text\n  // Your code here\n}",
+    "solution": "// HTML structure:\n// <div id=\"title\">Original Title</div>\n// <p class=\"description\">Original description</p>\n// <button onclick=\"changeContent()\">Change Content</button>\n\nfunction changeContent() {\n  // Select the title element and change its text\n  const title = document.getElementById('title');\n  title.textContent = 'New Title';\n  \n  // Select the description element and change its text\n  const description = document.querySelector('.description');\n  description.textContent = 'New description';\n}",
+    "testCases": [
+      {
+        "input": "changeContent()",
+        "expected": "Title changed to 'New Title' and description changed to 'New description'",
+        "description": "Should change both title and description text"
+      }
+    ]
+  },
+  {
+    "id": "js-dom-002",
+    "title": "Event Handling",
+    "category": "javascript-dom",
+    "difficulty": "medium",
+    "question": "Add event listeners to handle user interactions.",
+    "description": "Practice adding event listeners and handling different types of events.",
+    "starterCode": "// HTML structure:\n// <button id=\"clickBtn\">Click Me</button>\n// <input id=\"textInput\" type=\"text\" placeholder=\"Type something...\">\n// <div id=\"output\"></div>\n\n// Add event listeners\nconst button = document.getElementById('clickBtn');\nconst input = document.getElementById('textInput');\nconst output = document.getElementById('output');\n\n// Your code here",
+    "solution": "// HTML structure:\n// <button id=\"clickBtn\">Click Me</button>\n// <input id=\"textInput\" type=\"text\" placeholder=\"Type something...\">\n// <div id=\"output\"></div>\n\n// Add event listeners\nconst button = document.getElementById('clickBtn');\nconst input = document.getElementById('textInput');\nconst output = document.getElementById('output');\n\n// Button click event\nbutton.addEventListener('click', function() {\n  output.innerHTML += '<p>Button was clicked!</p>';\n});\n\n// Input change event\ninput.addEventListener('input', function() {\n  output.innerHTML = '<p>You typed: ' + this.value + '</p>';\n});",
+    "testCases": [
+      {
+        "input": "button click",
+        "expected": "Button was clicked! message appears",
+        "description": "Should display message when button is clicked"
+      },
+      {
+        "input": "input text",
+        "expected": "You typed: [text] message appears",
+        "description": "Should display typed text in real-time"
+      }
+    ]
+  }
+]

@@ -1,0 +1,475 @@
+/* Custom CSS Variables for Dark Mode */
+:root {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --code-bg: #f8f9fa;
+  --code-border: #dee2e6;
+  --accordion-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.125);
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #212529;
+  --bs-body-color: #ffffff;
+  --code-bg: #2d3748;
+  --code-border: #4a5568;
+  --accordion-bg: #343a40;
+  --shadow-color: rgba(255, 255, 255, 0.125);
+  --gradient-start: #1a1a1a;
+  --gradient-end: #2d3748;
+}
+
+/* Body Transitions */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bs-gray-200);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bs-gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-gray-600);
+}
+
+/* Dark mode scrollbar */
+[data-bs-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bs-gray-800);
+}
+
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--bs-gray-600);
+}
+
+[data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-gray-500);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for fixed navbar */
+}
+
+/* Code blocks styling */
+pre {
+  background: var(--code-bg) !important;
+  border: 1px solid var(--code-border) !important;
+  border-radius: 8px !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', monospace !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', monospace !important;
+}
+
+/* Accordion custom styling */
+.accordion-item {
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.accordion-header {
+  border-radius: 8px !important;
+}
+
+.accordion-button {
+  border-radius: 8px !important;
+  font-weight: 500;
+  padding: 1rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+  border-bottom: 1px solid var(--code-border);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.accordion-body {
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Badge styling */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Button hover effects */
+.btn {
+  transition: all 0.2s ease;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero section styling */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" fill-opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+  pointer-events: none;
+}
+
+/* Logo styling */
+.navbar-logo,
+.hero-logo {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar-logo:hover,
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Dark mode logo adjustments */
+[data-bs-theme="dark"] .navbar-logo,
+[data-bs-theme="dark"] .hero-logo {
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+/* Navbar styling */
+.navbar {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Footer styling */
+footer {
+  background: var(--bs-gray-100);
+  border-top: 2px solid var(--bs-gray-300);
+}
+
+[data-bs-theme="dark"] footer {
+  background: var(--bs-gray-900);
+  border-top: 2px solid var(--bs-gray-700);
+}
+
+/* Link hover effects */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+/* Question text formatting */
+.question-text strong {
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+.question-text em {
+  font-style: italic;
+  color: var(--bs-success);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  .accordion-body {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  pre {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Responsive logo sizing */
+  .navbar-logo {
+    height: 28px !important;
+  }
+  
+  .hero-logo {
+    height: 60px !important;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation for cards */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-float:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .glass-morphism {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced card shadows */
+.card-enhanced {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card-enhanced:hover::before {
+  opacity: 1;
+}
+
+.card-enhanced:hover {
+  transform: translateY(-15px) scale(1.02);
+}
+
+.card-enhanced .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Professional buttons */
+.btn-professional {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-professional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-professional:hover::before {
+  left: 100%;
+}
+
+/* Hero section improvements */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" fill-opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" fill-opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" fill-opacity="0.08"/><circle cx="10" cy="90" r="0.8" fill="%23ffffff" fill-opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Improved accordion styling */
+.accordion-item {
+  border-radius: 12px !important;
+  margin-bottom: 12px;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+[data-bs-theme="dark"] .accordion-item {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.03);
+}
+
+.accordion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+[data-bs-theme="dark"] .accordion-item:hover {
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.05);
+}
+
+.accordion-button {
+  border-radius: 12px !important;
+  font-weight: 600;
+  padding: 1.5rem;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-button:not(.collapsed) {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  box-shadow: none;
+}
+
+.accordion-body {
+  padding: 2rem 1.5rem;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Code syntax highlighting improvements */
+pre {
+  position: relative;
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+}
+
+[data-bs-theme="dark"] pre {
+  box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.03);
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Focus improvements for accessibility */
+.btn:focus,
+.accordion-button:focus {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .btn,
+  footer {
+    display: none !important;
+  }
+  
+  .accordion-button {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .accordion-body {
+    border: 1px solid #000 !important;
+    page-break-inside: avoid;
+  }
+}
